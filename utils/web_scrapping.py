@@ -1,5 +1,7 @@
+import random
+import time
 # Define a function to perform random scrolling
-def random_scroll():
+def random_scroll(driver):
     # Get the height of the webpage
     total_height = driver.execute_script("return document.body.scrollHeight")
     
@@ -12,12 +14,12 @@ def random_scroll():
         # Wait for a short period of time
         time.sleep(random.uniform(5, 20))  
         
-def scroll_to_bottom():
+def scroll_to_bottom(driver):
     """Scrolls to the bottom of the page."""
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(2)  # Allow time for content to load
 
-def scroll_to_element(element):
+def scroll_to_element(driver,element):
     """Scrolls smoothly to the given element."""
     driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element)
     time.sleep(2)  # Small delay for UI adjustment
