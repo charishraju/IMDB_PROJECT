@@ -1,5 +1,7 @@
 import random
 import time
+
+
 # Define a function to perform random scrolling
 def random_scroll(driver):
     # Get the height of the webpage
